@@ -1,0 +1,22 @@
+.container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    width: 1000px;
+    align-items: center;
+    text-align: center;
+    border-bottom: 10px solid #f55f5f;
+}
+.category {
+    padding-bottom: 5px;
+}
+.question {
+    padding-top: 10px;
+}
+.button {
+    /* margin-top: 20px !important;
+    margin-right: 30px !important; */
+    margin: -25px 0 0 365px !important;
+    width: 100px;
+    position: absolute !important;
+}
