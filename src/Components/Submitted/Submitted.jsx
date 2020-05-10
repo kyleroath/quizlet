@@ -1,6 +1,8 @@
 import React from 'react'
 
-const Submitted = ({selections}) => {
+import {Button} from '@material-ui/core'
+
+const Submitted = ({selections, reset}) => {
 
     let correctAnswers = 0
 
@@ -15,6 +17,7 @@ const Submitted = ({selections}) => {
     return (
         <div>
             <p>{`Total correct: ${correctAnswers}/${selections.length}`}</p>
+            <Button onClick={() => window.location.reload(false)}>Reset</Button>
         </div>
     )
 }

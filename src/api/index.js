@@ -4,8 +4,12 @@ let questionURL = `https://opentdb.com/api.php?amount=5`
 const categoryURL = 'https://opentdb.com/api_category.php'
 
 export const fetchData = async (category) => {
+    let customURL = questionURL
+    if(category) {
+        customURL = `${questionURL}&category=${category}`
+    }
     try {
-        const { data: {results} } = await axios.get(`${questionURL}&category=${category}`)
+        const { data: {results} } = await axios.get(customURL)
         return results
     }
     catch (err) {
