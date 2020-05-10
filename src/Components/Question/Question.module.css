@@ -20,3 +20,14 @@
     width: 100px;
     position: absolute !important;
 }
+
+@media only screen and (max-width: 770px) {
+    .container {
+        width: 100%;
+    }
+    .button {
+        position: static !important;
+        margin: 20px 0 0 0 !important;
+        width: 100%;
+    }
+  }

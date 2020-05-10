@@ -48,7 +48,7 @@ class App extends React.Component {
                 <div className={styles.container}>
                     <Typography variant='h3'>Quizlet</Typography>
                     <img className={styles.image} src={quizletimg} alt="Quizlet"/>
-                    <Typography variant='h6' className={styles.caption}>A fun application built using the OpenTDB API built for categorized questions. See how you do! Good luck ;)</Typography>
+                    <Typography variant='h6' className={styles.caption}>A fun 5 question random or specific categorized quiz game. See how you do! Good luck ;)</Typography>
                 </div>
                 {testing && <div className={styles.container}>
                         <Button onClick={() => console.log(questions)}>Questions</Button>
@@ -59,10 +59,12 @@ class App extends React.Component {
                     <Typography variant="overline">Category:</Typography>
                     <Categories categoryList={categories} handleCategory={this.handleCategoryChange}/>
                 </div>
-                {/* Optional loading bar */}
                 <div className={styles.question}>
                     {questions.length && !isCompleted && <QuestionCard questions={questions} qCount={qCount} changeQuestion={this.handleQuestionChange}/>}
                     {questions.length && isCompleted && <Submitted selections={selections} reset={this.freshData}/>}
+                </div>
+                <div className={styles.container}>
+                    <Typography variant='caption' className={styles.footer}>Site created by Kyle Roath</Typography>
                 </div>
             </div>    
         )
