@@ -1,17 +1,16 @@
 import React from 'react'
 
-import {NativeSelect, FormControl, InputLabel} from '@material-ui/core'
+import {NativeSelect, FormControl} from '@material-ui/core'
 import styles from './Categories.module.css'
 
-const Categories = () => {
+const Categories = ({categoryList, handleCategory}) => {
     return (
         <div>
             <FormControl className={styles.container}>
-                <InputLabel>Category</InputLabel>
-                <NativeSelect name='category'>
-                <option value='Test'>One</option>
-                <option value='Test'>Two</option>
-                <option value='Test'>Three</option>
+                {/* <InputLabel>Category</InputLabel> */}
+                <NativeSelect name='category' onChange={(e) => handleCategory(e.target.value)}>
+                <option value=''>Random</option>
+                {categoryList.map((m, i) => <option key={i} value={m.id}>{m.name}</option>)}
                 </NativeSelect>
             </FormControl>
         </div>
