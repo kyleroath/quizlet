@@ -1,6 +1,8 @@
 import React from 'react'
 
-import {Button} from '@material-ui/core'
+import {Button, Card, CardContent, Box, Typography} from '@material-ui/core'
+
+import styles from './Submitted.module.css'
 
 const Submitted = ({selections, reset}) => {
 
@@ -16,8 +18,16 @@ const Submitted = ({selections, reset}) => {
     }
     return (
         <div>
-            <p>{`Total correct: ${correctAnswers}/${selections.length}`}</p>
-            <Button onClick={() => window.location.reload(false)}>Reset</Button>
+            <Card className={styles.container}>
+                <CardContent >
+                    <Box border={1} borderRadius={16}>
+                <Typography variant='h5' className={styles.results}>Your results:</Typography>
+                </Box> 
+                    <Typography variant='h6' className={styles.question}>{`You scored ${correctAnswers}/${selections.length} correct!`}</Typography>
+                    <Typography variant='h4' className={styles.question}>{(correctAnswers * 100) / selections.length}%</Typography>
+                    <Button className={styles.reset}onClick={() => window.location.reload(false)}>Try Again</Button>
+                </CardContent>
+            </Card>
         </div>
     )
 }

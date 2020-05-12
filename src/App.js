@@ -61,10 +61,10 @@ class App extends React.Component {
                 </div>
                 <div className={styles.question}>
                     {questions.length && !isCompleted && <QuestionCard questions={questions} qCount={qCount} changeQuestion={this.handleQuestionChange}/>}
-                    {questions.length && isCompleted && <Submitted selections={selections} reset={this.freshData}/>}
+                    {isCompleted && <Submitted selections={selections} reset={this.freshData}/>}
                 </div>
                 <div className={styles.container}>
-                    <Typography variant='caption' className={styles.footer}>Site created by Kyle Roath</Typography>
+                    <Typography variant='caption' className={styles.footer}>Quizlet created by Kyle Roath. OpenTDB for API.</Typography>
                 </div>
             </div>    
         )

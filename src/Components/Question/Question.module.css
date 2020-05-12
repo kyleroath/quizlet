@@ -19,6 +19,7 @@
     margin: -25px 0 0 365px !important;
     width: 100px;
     position: absolute !important;
+    text-transform: none !important;
 }
 
 @media only screen and (max-width: 770px) {
