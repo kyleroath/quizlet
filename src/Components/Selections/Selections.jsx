@@ -8,12 +8,7 @@ import styles from './Selections.module.css'
 const Selection = ({content, setSelection, currentSelection}) => {
 
     useEffect(() => {
-        console.log(currentSelection)
-    }, [currentSelection])
-
-    useEffect(() => {
         setSelection('')
-        console.log(content.correct_answer)
     // eslint-disable-next-line
     }, [content])
 
