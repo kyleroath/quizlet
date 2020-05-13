@@ -10,7 +10,7 @@ const Submitted = ({selections, reset}) => {
 
     // eslint-disable-next-line
     const calculateScore = (() => {
-        selections.forEach((e) => e.selection === e.correct ? correctAnswers++ : correctAnswers--)
+        selections.forEach((e) => e.selection === e.correct ? correctAnswers++ : correctAnswers)
     })()
 
     if(!correctAnswers) {
