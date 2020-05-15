@@ -1,7 +1,7 @@
-import React, {useState, useEffect} from 'react'
-import {unescape} from 'html-escaper'
+import React, {useState} from 'react'
 
 import Selection from '../Selections/Selections'
+import {decodeHtml} from '../../api'
 
 import {Typography, Button, Card, CardContent, Box} from '@material-ui/core'
 import styles from './Question.module.css'
@@ -10,8 +10,7 @@ import styles from './Question.module.css'
 const QuestionCard = ({questions, qCount, changeQuestion}) => {
 
     /* Variable decalartions! */
-    const initialQuestion = unescape(questions[qCount].question)
-    const unescapedQuestion = initialQuestion.replace(/&#039;/g,`'`) // Running escape for HTML escapes. Added replace for apostrophe, as not included in the HTML-escaper.
+    const unescapedQuestion = decodeHtml(questions[qCount].question)
     const questionBarStatus = qCount + 1 < questions.length
     
     const [currentSelection, setCurrentSelection] = useState('') // Used by selection component to set selection. Then saved to parent class selection on next.

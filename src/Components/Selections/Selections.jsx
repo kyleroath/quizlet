@@ -1,4 +1,5 @@
 import React, {useEffect} from 'react'
+import {decodeHtml} from '../../api'
 
 import {FormControl, FormControlLabel, FormLabel, FormGroup, Checkbox} from '@material-ui/core'
 
@@ -15,7 +16,7 @@ const Selection = ({content, setSelection, currentSelection}) => {
     let parsedQuestions = [content.correct_answer]
     // eslint-disable-next-line
     const parseData = (() => {
-        content.incorrect_answers.map((m) => parsedQuestions.push(m))
+        content.incorrect_answers.map((m) => parsedQuestions.push(decodeHtml(m)))
         if(parsedQuestions.length > 3) {
             parsedQuestions.sort()
         }

@@ -3,7 +3,7 @@ import axios from 'axios'
 let questionURL = `https://opentdb.com/api.php?amount=5`
 const categoryURL = 'https://opentdb.com/api_category.php'
 
-export const fetchData = async (category) => {
+export const fetchData = async category => {
     let customURL = questionURL
     if(category) {
         customURL = `${questionURL}&category=${category}`
@@ -24,4 +24,10 @@ export const fetchCategories = async () => {
     } catch (err) {
         console.log(err)
     }
+}
+
+export const decodeHtml = html => {
+    var txt = document.createElement("textarea");
+    txt.innerHTML = html;
+    return txt.value;
 }
